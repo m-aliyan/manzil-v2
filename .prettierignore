@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+build
+opencode.json
+.opencode
+video
+package-lock.json
+next-env.d.ts

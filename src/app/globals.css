@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens — the single source of truth for color and type.
+ * PROVISIONAL values: finalized in the design step (docs/DESIGN.md).
+ * Components must reference tokens (e.g. `bg-surface`, `text-muted`) and must
+ * never hardcode hex values.
+ */
+:root {
+  --background: #faf9f6;
+  --surface: #ffffff;
+  --foreground: #16181a;
+  --muted: #6b7075;
+  --hairline: rgba(22, 24, 26, 0.12);
+  --accent: #2f6f5e;
+  --warning: #b45309;
+  --stage: #14181a;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-hairline: var(--hairline);
+  --color-accent: var(--accent);
+  --color-warning: var(--warning);
+  --color-stage: var(--stage);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial,
+    sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+* {
+  border-color: var(--hairline);
+}
+
+html {
+  scrollbar-gutter: stable;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--stage);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p,
+li {
+  text-wrap: pretty;
+}
+
+.mono-label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
